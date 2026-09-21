@@ -1,0 +1,29 @@
+# Virtual environments
+venv/
+birdenv/
+.env
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Данные и модели (слишком большие для Git)
+data/images/
+data/processed/
+models/
+*.pth
+*.onnx
+*.onnx.data
+*.zip
+
+# DVC
+.dvc/tmp/
+.dvc/cache/
+
+# IDE
+.vscode/
+.idea/
+
+# Streamlit
+.streamlit/

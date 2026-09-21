@@ -1,0 +1,32 @@
+stages:
+  prepare_data:
+    cmd: python scripts/download_data.py
+    deps:
+      - scripts/download_data.py
+      - src/data_processing.py
+      - config.py
+      - data/raw/Anas_platyrhynchos.csv
+      - data/raw/Coloeus_monedula.csv
+      - data/raw/Columba_livia_domestica.csv
+      - data/raw/Corvus_cornix.csv
+      - data/raw/Larus_argentatus.csv
+    outs:
+      - data/images/
+      - data/processed/train.csv
+      - data/processed/test.csv
+      - data/processed/species_mapping.json
+
+  train_model:
+    cmd: python scripts/train_model.py
+    deps:
+      - scripts/train_model.py
+      - src/model_training.py
+      - src/data_processing.py
+      - config.py
+      - data/processed/train.csv
+      - data/processed/test.csv
+    outs:
+      - models/best_model.pth
+    metrics:
+      - data/processed/metrics.json:
+          cache: false

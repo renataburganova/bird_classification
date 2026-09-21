@@ -1,0 +1,14 @@
+torch
+torchvision
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+Pillow
+streamlit
+dvc
+tqdm
+requests
+opencv-python-headless
+onnxruntime
